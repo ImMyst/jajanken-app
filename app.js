@@ -1,0 +1,1 @@
+console.log("Saisho wa guu. Jan, Ken, GUU!");
