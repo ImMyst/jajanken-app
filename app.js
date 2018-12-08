@@ -4,12 +4,12 @@ const userScorePrint = document.getElementById("user-score");
 const computerScorePrint = document.getElementById("computer-score");
 const scoreBoard = document.querySelector(".score-board");
 const result = document.querySelector(".result");
-const rock = document.getElementById("rock");
-const paper = document.getElementById("paper");
-const scissors = document.getElementById("scissors");
+const rock = document.getElementById("r");
+const paper = document.getElementById("p");
+const scissors = document.getElementById("s");
 
 function getComputerChoice() {
-    const choices = ['rock', 'paper', 'scissors'];
+    const choices = ['r', 'p', 's'];
     const randomNumber = (Math.floor(Math.random() * 3));
     return choices[randomNumber];
 }
@@ -17,19 +17,19 @@ function getComputerChoice() {
 function game(userChoice) {
     const computerChoice = getComputerChoice();
     switch (userChoice + computerChoice) {
-        case "rockscissors":
-        case "paperrock":
-        case "scissorspaper":
+        case "rs":
+        case "pr":
+        case "sp":
             console.log("USER WINS");
             break;
-        case "rockpaper":
-        case "paperscissors":
-        case "scissorsrock":
+        case "rp":
+        case "ps":
+        case "sr":
             console.log("USER LOSES");
             break;
-        case "rockrock":
-        case "paperpaper":
-        case "scissorsscissors":
+        case "rr":
+        case "pp":
+        case "ss":
             console.log("DRAW");
             break;
     }
@@ -37,15 +37,15 @@ function game(userChoice) {
 
 function main() {
     rock.addEventListener('click', function () {
-        game("rock");
+        game("r");
     });
 
     paper.addEventListener('click', function () {
-        game("paper");
+        game("p");
     });
 
     scissors.addEventListener('click', function () {
-        game("scissors");
+        game("s");
     });
 }
 
