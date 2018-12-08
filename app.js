@@ -1,1 +1,9 @@
-console.log("Saisho wa guu. Jan, Ken, GUU!");
+const userScore = 0;
+const computerScore = 0;
+const userScorePrint = document.getElementById("user-score");
+const computerScorePrint = document.getElementById("computer-score");
+const scoreBoard = document.querySelector(".score-board");
+const result = document.querySelector(".result");
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
