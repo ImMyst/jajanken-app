@@ -1,17 +1,47 @@
-const userScore = 0;
-const computerScore = 0;
 const userScorePrint = document.getElementById("user-score");
 const computerScorePrint = document.getElementById("computer-score");
 const scoreBoard = document.querySelector(".score-board");
-const result = document.querySelector(".result");
+const result = document.querySelector(".result > p");
 const rock = document.getElementById("r");
 const paper = document.getElementById("p");
 const scissors = document.getElementById("s");
+let userScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
     const choices = ['r', 'p', 's'];
     const randomNumber = (Math.floor(Math.random() * 3));
     return choices[randomNumber];
+}
+
+function convertToWord(letter) {
+    if (letter === "r") return "Rock";
+    if (letter === "p") return "Paper";
+    if (letter === "s") return "Scissors";
+}
+
+function win(userChoice, computerChoice) {
+    userScore++;
+    userScorePrint.innerHTML = userScore;
+    computerScorePrint.innerHTML = computerScore;
+    const smallUserWord = "you".fontsize(3).sub();
+    const smallComputerWord = "comp".fontsize(3).sub();
+    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallComputerWord} . You win !`;
+}
+
+function lose(userChoice, computerChoice) {
+    computerScore++;
+    userScorePrint.innerHTML = userScore;
+    computerScorePrint.innerHTML = computerScore;
+    const smallUserWord = "you".fontsize(3).sub();
+    const smallComputerWord = "comp".fontsize(3).sub();
+    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallComputerWord} . You lost !`;
+}
+
+function draw(userChoice, computerChoice) {
+    const smallUserWord = "you".fontsize(3).sub();
+    const smallComputerWord = "comp".fontsize(3).sub();
+    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} equals ${convertToWord(computerChoice)}${smallComputerWord} . I'ts a draw !`;
 }
 
 function game(userChoice) {
@@ -20,17 +50,17 @@ function game(userChoice) {
         case "rs":
         case "pr":
         case "sp":
-            console.log("USER WINS");
+            win(userChoice, computerChoice);
             break;
         case "rp":
         case "ps":
         case "sr":
-            console.log("USER LOSES");
+            lose(userChoice, computerChoice);
             break;
         case "rr":
         case "pp":
         case "ss":
-            console.log("DRAW");
+            draw(userChoice, computerChoice);
             break;
     }
 }
