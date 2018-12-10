@@ -24,8 +24,8 @@ function win(userChoice, computerChoice) {
     userScore++;
     userScorePrint.innerHTML = userScore;
     computerScorePrint.innerHTML = computerScore;
-    const smallUserWord = "you".fontsize(3).sub();
-    const smallComputerWord = "comp".fontsize(3).sub();
+    const smallUserWord = "toi".fontsize(3).sub();
+    const smallComputerWord = "ordi".fontsize(3).sub();
     result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} gagne contre ${convertToWord(computerChoice)}${smallComputerWord} . Tu gagnes ! \u{1F624}`;
 }
 
@@ -33,14 +33,14 @@ function lose(userChoice, computerChoice) {
     computerScore++;
     userScorePrint.innerHTML = userScore;
     computerScorePrint.innerHTML = computerScore;
-    const smallUserWord = "you".fontsize(3).sub();
-    const smallComputerWord = "comp".fontsize(3).sub();
+    const smallUserWord = "toi".fontsize(3).sub();
+    const smallComputerWord = "ordi".fontsize(3).sub();
     result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} perd face à ${convertToWord(computerChoice)}${smallComputerWord} . Tu perds !\u{1F627}`;
 }
 
 function draw(userChoice, computerChoice) {
-    const smallUserWord = "you".fontsize(3).sub();
-    const smallComputerWord = "comp".fontsize(3).sub();
+    const smallUserWord = "toi".fontsize(3).sub();
+    const smallComputerWord = "ordi".fontsize(3).sub();
     result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} égal ${convertToWord(computerChoice)}${smallComputerWord} . Égalité ! \u{1F612}`;
 }
 
