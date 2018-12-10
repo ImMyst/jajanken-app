@@ -41,7 +41,7 @@ function lose(userChoice, computerChoice) {
 function draw(userChoice, computerChoice) {
     const smallUserWord = "toi".fontsize(3).sub();
     const smallComputerWord = "ordi".fontsize(3).sub();
-    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} égal ${convertToWord(computerChoice)}${smallComputerWord} . Égalité ! \u{1F612}`;
+    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} annihile ${convertToWord(computerChoice)}${smallComputerWord} . Égalité ! \u{1F612}`;
 }
 
 function game(userChoice) {
