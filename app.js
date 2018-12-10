@@ -15,9 +15,9 @@ function getComputerChoice() {
 }
 
 function convertToWord(letter) {
-    if (letter === "r") return "Rock";
-    if (letter === "p") return "Paper";
-    if (letter === "s") return "Scissors";
+    if (letter === "r") return "Pierre";
+    if (letter === "p") return "Papier";
+    if (letter === "s") return "Ciseaux";
 }
 
 function win(userChoice, computerChoice) {
@@ -26,7 +26,7 @@ function win(userChoice, computerChoice) {
     computerScorePrint.innerHTML = computerScore;
     const smallUserWord = "you".fontsize(3).sub();
     const smallComputerWord = "comp".fontsize(3).sub();
-    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallComputerWord} . You win !`;
+    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} gagne contre ${convertToWord(computerChoice)}${smallComputerWord} . Tu gagnes ! \u{1F624}`;
 }
 
 function lose(userChoice, computerChoice) {
@@ -35,13 +35,13 @@ function lose(userChoice, computerChoice) {
     computerScorePrint.innerHTML = computerScore;
     const smallUserWord = "you".fontsize(3).sub();
     const smallComputerWord = "comp".fontsize(3).sub();
-    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallComputerWord} . You lost !`;
+    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} perd face à ${convertToWord(computerChoice)}${smallComputerWord} . Tu perds !\u{1F627}`;
 }
 
 function draw(userChoice, computerChoice) {
     const smallUserWord = "you".fontsize(3).sub();
     const smallComputerWord = "comp".fontsize(3).sub();
-    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} equals ${convertToWord(computerChoice)}${smallComputerWord} . I'ts a draw !`;
+    result.innerHTML = `${convertToWord(userChoice)}${smallUserWord} égal ${convertToWord(computerChoice)}${smallComputerWord} . Égalité ! \u{1F612}`;
 }
 
 function game(userChoice) {
